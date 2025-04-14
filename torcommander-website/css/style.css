@@ -1,0 +1,239 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e0e1a;
+    color: #f0f0f5;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #4b006e, #000000);
+    padding: 20px 40px;
+    text-align: center;
+    border-bottom: 2px solid #8a2be2;
+  }
+  
+  .logo {
+    width: 60px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #e0d2f7;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  nav a {
+    color: #e0d2f7;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background-color: #2a004d;
+    border-color: #8a2be2;
+  }
+  
+  /* Cards */
+  .card {
+    background-color: #1a1a2f;
+    border-radius: 15px;
+    padding: 25px 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .card h2 {
+    color: #c799ff;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    margin-top: 20px;
+    color: #f0c6ff;
+  }
+  
+  .card p {
+    margin-bottom: 10px;
+  }
+  
+  .card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  /* Code Blocks */
+  .code-container {
+    position: relative;
+    background-color: #2a2a3c;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 12px;
+  }
+  
+  .code-container code {
+    display: block;
+    font-family: "Courier New", Courier, monospace;
+    color: #f9f871;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+  
+  .center-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
+  /* Copy Button */
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .copy-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .clipboard-icon {
+    width: 20px;
+    height: 20px;
+    color: #f0f0f5;
+    pointer-events: none;
+  }
+  
+  /* Buttons */
+  .btn,
+  form button[type="submit"] {
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  
+  .btn:hover,
+  form button[type="submit"]:hover {
+    background-color: #4b0082;
+  }
+  
+  /* Form Fields (Contact Page) */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background-color: #26263d;
+    color: #fff;
+    padding: 10px 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #8a2be2;
+    outline: none;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1b1b2f;
+    text-align: center;
+    padding: 15px 0;
+    color: #bbb;
+    font-size: 0.9rem;
+    border-top: 2px solid #333;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .logo {
+      width: 50px;
+    }
+  
+    .card {
+      margin: 20px 10px;
+      padding: 20px;
+    }
+  }
+  
