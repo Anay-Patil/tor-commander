@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Installation - TorCommander</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.jpg" alt="TorCommander Logo" class="logo" />
+    <h1>TorCommander</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="installation.html" class="active">Installation</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="contributing.html">Contributing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Installation</h2>
+      <p>To use TorCommander, make sure you have the following prerequisites installed on your Linux system:</p>
+      <ul>
+        <li><strong>Tor:</strong> Ensure the Tor service is installed and running.</li>
+        <li><strong>GCC:</strong> Required for compiling the C program.</li>
+        <li><strong>Make:</strong> Used to build the project using the Makefile.</li>
+      </ul>
+
+      <h3>Install Prerequisites</h3>
+      <div class="code-container">
+        <button class="copy-btn" onclick="copyToClipboard(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="clipboard-icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4H18a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2H8" />
+            <rect x="9" y="2" width="6" height="4" rx="1" ry="1" />
+          </svg>
+        </button>
+        <code>sudo apt update<br>sudo apt install tor gcc make</code>
+      </div>
+
+      <h3>Clone the Repository</h3>
+      <div class="code-container">
+        <button class="copy-btn" onclick="copyToClipboard(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="clipboard-icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4H18a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2H8" />
+            <rect x="9" y="2" width="6" height="4" rx="1" ry="1" />
+          </svg>
+        </button>
+        <code>git clone https://github.com/Anay-Patil/tor-commander.git</code>
+      </div>
+
+      <h3>Build the Project</h3>
+      <div class="code-container">
+        <button class="copy-btn" onclick="copyToClipboard(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="clipboard-icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4H18a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2H8" />
+            <rect x="9" y="2" width="6" height="4" rx="1" ry="1" />
+          </svg>
+        </button>
+        <code>cd tor-commander<br>make</code>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 TorCommander. Securing your shell.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
