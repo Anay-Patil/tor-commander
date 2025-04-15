@@ -24,3 +24,50 @@ function copyToClipboard(button) {
     });
   }
   
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      const isVisible = answer.style.display === 'block';
+      answer.style.display = isVisible ? 'none' : 'block';
+    });
+  });
+});
+  
+const modal = document.getElementById('confirmationModal');
+const closeButton = document.querySelector('.close-button');
+
+function toggleModal() {
+  modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+}
+
+closeButton.addEventListener('click', toggleModal);
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+});
+
+// Update form submission handler
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (name && email && subject && message) {
+    toggleModal();
+    form.reset();
+  } else {
+    alert('Please fill in all fields.');
+  }
+});
+  
