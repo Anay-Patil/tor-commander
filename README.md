@@ -54,12 +54,24 @@ cd torcommander
 make
 ```
 
-3. **Install the script globally**:
-Save the provided shell script to `/usr/bin/` so `toralize` works globally:
+3. **Install the `toralize` script globally**:
+
+There are **two approaches** to use `toralize` globally:
+
+### Approach 1: With Provided Script
+If the `toralize.sh` script is already available:
 ```bash
 sudo cp toralize.sh /usr/bin/toralize
 sudo chmod +x /usr/bin/toralize
 ```
+
+### Approach 2: Manually Create the Script
+If you do not have `toralize.sh`, manually create it:
+```bash
+echo -e '#!/bin/bash\n\nexport LD_PRELOAD=/path/to/toralize.so\n${@}\nunset LD_PRELOAD' | sudo tee /usr/bin/toralize > /dev/null
+sudo chmod +x /usr/bin/toralize
+```
+> Replace `/path/to/toralize.so` with the actual path where `toralize.so` is located, for example `/home/user/TorCommander/toralize.so`.
 
 ---
 
