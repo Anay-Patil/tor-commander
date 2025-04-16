@@ -83,7 +83,7 @@ toralize curl ifconfig.me
 - `toralize ssh user@hostname`
 - `toralize git clone https://github.com/...`
 
-> ⚠️ Compatibility depends on how the app resolves network calls (SOCKS5 support).
+> ⚠️ Compatibility depends on how the app resolves network calls (SOCKS4 support).
 
 ---
 
