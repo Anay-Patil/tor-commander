@@ -4,7 +4,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Linux-informational)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Open Source](https://img.shields.io/badge/Open--Source-Yes-green)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ddf79058-57fd-4bcc-a873-58bf52d14e7e/deploy-status)](https://app.netlify.com/sites/tor-commander/deploys)
+
 ---
 
 ## 🔍 Overview
