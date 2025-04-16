@@ -1,123 +1,145 @@
-# 🚀 TorCommander – The Toralizer
+# 🛡️ TorCommander – The Toralizer
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Platform: Linux](https://img.shields.io/badge/Platform-Linux-blue)
-![Tor Integrated](https://img.shields.io/badge/Tor-Supported-7D4698)
-![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen)
-
-## Overview
-
-**TorCommander** is a lightweight, Linux-based tool that routes system-level commands through the [Tor Network](https://www.torproject.org/) for anonymized execution. With a simple `toralize` keyword, users can mask their IP address and geolocation while executing common networking and system commands. Ideal for developers, researchers, and privacy-focused users, the tool encourages safe and censorship-resistant usage.
-
-Inspired by cybersecurity advocate **Dr. Jones Birch**, TorCommander brings the power of anonymity into a Unix shell in a developer-friendly way. Fully open-source and community-driven.
+![Platform](https://img.shields.io/badge/Platform-Linux-informational)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Open Source](https://img.shields.io/badge/Open--Source-Yes-green)
 
 ---
 
-## ✨ Features
+## 🔍 Overview
 
-- **⚫ Tor Integration:** Routes outgoing commands through the Tor network.
-- **⌨ Command Toralization:** Use `toralize <your-command>` to automatically run through Tor.
-- **🚫 IP & Geolocation Masking:** Commands are executed from hidden endpoints.
-- **⚙ Lightweight & Modular:** No heavy VPNs; simple C scripts and shell integration.
-- **📂 Easy to Extend:** Includes `toralize.c`, `toralize.h`, and `Makefile`.
+**TorCommander** is a lightweight, open-source Linux tool that anonymizes terminal command executions by routing traffic through the **Tor network**. Designed with simplicity and privacy in mind, it helps users protect their identity and bypass restrictive firewalls.
+
+Inspired by cybersecurity advocate **Dr. Jones Birch**, the project takes the concept further—offering a practical, minimal, and easily extensible tool for secure, command-line-based internet access.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Features
 
-### 📅 Prerequisites
+- 🔐 **Tor Integration** – Automatically channels commands through the Tor network.
+- 🧠 **Toralization via Keyword** – Just use `toralize` before a command to anonymize it.
+- 🌍 **IP & Location Masking** – Your real IP address and geolocation stay hidden.
+- ⚖️ **LD_PRELOAD Technique** – Seamlessly intercepts network calls using dynamic linking.
+- 📚 **Educational & Research Friendly** – Great for learning about system-level privacy and dynamic linking.
+- 📁 **Modular Codebase** – Clean structure with `toralize.c`, `toralize.h`, and `Makefile` for easy builds.
 
-Install required tools:
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+Make sure the following dependencies are installed on your Linux system:
+
+- **Tor**
+- **GCC**
+- **Make**
+
+### Steps
 
 ```bash
 sudo apt update
 sudo apt install tor gcc make
 ```
 
-### ⚙ Installation
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/torcommander.git
-   cd torcommander
-   ```
-
-2. Compile the source code:
-   ```bash
-   make
-   ```
-
-3. Copy the `toralize` script to `/usr/bin` for global access:
-   ```bash
-   sudo cp toralize /usr/bin/
-   sudo chmod +x /usr/bin/toralize
-   ```
-
-4. Ensure Tor is running:
-   ```bash
-   sudo service tor start
-   ```
-
----
-
-## 🔧 Usage
-
-Use `toralize` as a prefix to any command you want to route through Tor:
-
+1. **Clone the repository**:
 ```bash
-toralize curl ifconfig.me
+git clone https://github.com/yourusername/torcommander.git
+cd torcommander
 ```
 
-> If you run into issues, try resolving explicitly:
-> ```bash
-> toralize curl --resolve http://example.com
-> ```
+2. **Compile the program**:
+```bash
+make
+```
+
+3. **Install the script globally**:
+Save the provided shell script to `/usr/bin/` so `toralize` works globally:
+```bash
+sudo cp toralize.sh /usr/bin/toralize
+sudo chmod +x /usr/bin/toralize
+```
 
 ---
 
-## 🔍 Example Commands That Work
-
-- `toralize curl https://example.com`
-- `toralize ping onion-site.onion`
-- `toralize wget http://mirror.site`
-- `toralize ssh user@hostname`
-- `toralize git clone https://github.com/...`
-
-> ⚠️ Compatibility depends on how the app resolves network calls (SOCKS4 support).
+## ⚠️ Troubleshooting
+If a command doesn't work properly, try using:
+```bash
+toralize curl --resolve http://example.com
+```
 
 ---
 
-## 🌍 Why TorCommander?
+## ⌨️ Usage
 
-- Great for **developers** and **researchers** in cybersecurity.
-- Enables safe access to the web from **restricted environments**.
-- A tool for **education** on dynamic linking, `LD_PRELOAD`, and secure networking.
-- Encourages **open innovation** and **privacy-first development**.
+To run any command anonymously, just prefix it with `toralize`:
+```bash
+toralize curl http://check.torproject.org
+```
+
+### Supported Commands
+The following types of commands are compatible:
+- `curl`, `wget`, `ping`
+- Any command making socket-based network calls
+- DNS resolution and TCP-based communication tools
+
+> Note: Not all system commands go through the network; `toralize` affects only those that do.
 
 ---
 
-## 🚀 Contributing
+## 🌐 Applications
 
-Want to help improve TorCommander? Fork this repo, make changes, and open a pull request! All skill levels welcome.
+- 🔐 **Privacy-First App Testing**: Useful for devs testing privacy-focused applications.
+- ⚖️ **Cybersecurity Research**: Ideal for experiments in anonymity, censorship, or secure networking.
+- 🏫 **Education**: A hands-on tool for OS and networking labs demonstrating LD_PRELOAD and socket redirection.
+- 🎓 **Restricted Network Use**: Helps users access educational or public resources in filtered environments.
+- 📰 **Journalism & Activism**: Enhances anonymity for users in sensitive regions.
+- 🌟 **End-User Benefit**: General users can stay private online with minimal setup and technical know-how.
+
+---
+
+## 🌿 Sustainability Goals
+
+This project aligns with:
+- **SDG 9**: Promotes robust, secure, and innovative digital infrastructure.
+- **SDG 16**: Strengthens digital rights, privacy, and fair access.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See [LICENSE](./LICENSE) for details.
+This project is licensed under the **MIT License**. Feel free to modify and use it as needed. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📖 References
 
-- [The Tor Project](https://www.torproject.org)
-- [SOCKS4 Protocol](https://www.openssh.com/txt/socks4.protocol)
-- [LD_PRELOAD in Linux](https://man7.org/linux/man-pages/man8/ld.so.8.html)
-- [POSIX Socket Programming](https://man7.org/linux/man-pages/man2/connect.2.html)
-- [SOCKS Proxy Details](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+| Sr. No | Reference Title                          | Source                                                      |
+|--------|------------------------------------------|-------------------------------------------------------------|
+| 1      | The Tor Project Documentation            | https://www.torproject.org                                  |
+| 2      | SOCKS4 Protocol Specification            | https://www.openssh.com/txt/socks4.protocol                 |
+| 3      | LD_PRELOAD in Linux                      | https://man7.org/linux/man-pages/man8/ld.so.8.html          |
+| 4      | POSIX Socket Programming Concepts        | https://man7.org/linux/man-pages/man2/connect.2.html        |
+| 5      | Understanding SOCKS Proxies              | https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt |
 
 ---
 
-## 🌐 Project Status
+## 🚀 Contributing
 
-Actively maintained. Your contributions and feedback are welcome to make TorCommander more stable and widely usable.
+We welcome contributions from the open-source community!
+
+### How to Contribute
+
+1. **Fork** this repository.
+2. Create a **new branch** with your feature or fix.
+3. **Commit** your changes and push the branch.
+4. Open a **Pull Request** and describe your changes.
+
+Please ensure your code follows standard conventions and is well-documented.
+
+---
+
+**TorCommander** is community-supported. Contributions and feedback are welcome!
+
+> Made with ❤️ for freedom and privacy. By TorCommander Team - Arfat Kadvekar, Anay Patil, Dwij Chaudhari, Dnyanesh Patil.
